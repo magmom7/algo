@@ -22,3 +22,11 @@ class NodeMgmt:
         while node:
             print(node.data)
             node = node.next
+
+
+linkedlist1 = NodeMgmt(0)
+linkedlist1.desc()
+
+for data in range(1, 10):
+    linkedlist1.add(data)
+    linkedlist1.desc()
