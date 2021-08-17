@@ -1,3 +1,5 @@
+import random
+
 def merge(left, right):
     merged = list()
     left_point, right_point = 0, 0
@@ -30,3 +32,6 @@ def mergesplit(data):
     left = mergesplit(data[:medium])
     right = mergesplit(data[medium:])
     return merge(left, right)
+
+data_list = random.sample(range(100), 10)
+mergesplit(data_list)
