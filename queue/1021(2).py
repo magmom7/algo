@@ -2,24 +2,23 @@ from sys import stdin
 from collections import deque
 
 
-def pop_left():  # 1번 연산
+def pop_left():  
     return stack.popleft()
 
 
-def move_left():  # 2번 연산
+def move_left():  
     temp = stack.popleft()
     stack.append(temp)
     return
 
 
-def move_right():  # 3번 연산
+def move_right():  
     temp = stack.pop()
     stack.appendleft(temp)
     return
 
 
-# 큐의 크기 N , 뽑아 내려고 하는 수의 개수 M
-# 뽑아내려는 숫자 num
+
 N, M = map(int, stdin.readline().split())
 stack = deque(range(1, N + 1))
 
