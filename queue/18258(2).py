@@ -1,42 +1,51 @@
-import sys
-from collections import deque
+import sys 
+from collections import deque 
 
-def push(queue, x):
-    queue.append(x)
-    
+n = int(sys.stdin.readline()) 
+deque = deque() 
+
+def push(deque, x): 
+    deque.append(x) 
+
 def pop(deque):
-    return deque.popleft() if deque else -1
+    if(not deque): 
+         return -1 
+    else: 
+        return deque.popleft() 
 
-def size(queue):
-    return len(queue)
+def size():
+    return len(deque) 
 
-def empty(queue):
-    return 1 if not queue else 0
+def empty(): 
+    if(not deque): 
+        return 1 
+    else: 
+        return 0 
 
-def front(queue):
-    return queue[0] if queue else -1
+def front(): 
+    if(not deque): 
+        return -1 
+    else: 
+        return deque[0]
 
-def back(queue):
-    return queue[-1] if queue else -1
+def back(): 
+    if(not deque): 
+        return -1 
+    else: 
+        return deque[-1] 
 
-deque = deque()
+for i in range(n): 
+    oper = sys.stdin.readline().split() 
 
-N = int(sys.stdin.readline().rstrip())
-
-for _ in range(N):
-    order = sys.stdin.readline().rstrip().split()
-    
-    command = order[0]
-    
-    if(command == "push"):
-        push(deque, order[1])
-    elif(command == "pop"):
-        sys.stdout.write(str(pop(deque)) + "\n")
-    elif(command == "size"):
-        sys.stdout.write(str(size(deque)) + "\n")
-    elif(command == "empty"):
-        sys.stdout.write(str(empty(deque)) + "\n")
-    elif(command == "front"):
-        sys.stdout.write(str(front(deque)) + "\n")
-    elif(command == "back"):
-        sys.stdout.write(str(back(deque)) + "\n")
+    if (oper[0] == "push"): 
+        push(deque, oper[1]) 
+    elif(oper[0] == "pop"): 
+        print(pop(deque)) 
+    elif(oper[0] == "size"): 
+        print(size()) 
+    elif(oper[0] == "empty"): 
+        print(empty()) 
+    elif(oper[0] == "front"): 
+        print(front()) 
+    elif(oper[0] == "back"): 
+        print(back())
